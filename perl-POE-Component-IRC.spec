@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	POE
-%define	pnam	Component-IRC
+%define		pdir	POE
+%define		pnam	Component-IRC
 Summary:	POE::Component::IRC - a fully event-driven IRC client module
 Summary(pl):	POE::Component::IRC - modu³ w pe³ni sterowanego zdarzeniami klienta IRC
 Name:		perl-POE-Component-IRC
