@@ -43,9 +43,9 @@ zrobiæ. Fajnie, nie?
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 mkdir -p lib/POE/{Component,Filter}
-mv Filter-CTCP.pm lib/POE/Filter/CTCP.pm
-mv Filter-IRC.pm  lib/POE/Filter/IRC.pm
-mv IRC.pm         lib/POE/Component/IRC.pm
+mv Filter-CTCP.pm	lib/POE/Filter/CTCP.pm
+mv Filter-IRC.pm	lib/POE/Filter/IRC.pm
+mv IRC.pm		lib/POE/Component/IRC.pm
 
 %build
 %{__perl} -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"POE::Component::IRC")' \
