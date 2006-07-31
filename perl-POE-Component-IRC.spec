@@ -8,17 +8,18 @@
 Summary:	POE::Component::IRC - a fully event-driven IRC client module
 Summary(pl):	POE::Component::IRC - modu³ w pe³ni sterowanego zdarzeniami klienta IRC
 Name:		perl-POE-Component-IRC
-Version:	3.0
-Release:	1
+Version:	4.97
+Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b657bcefd8c468db6df5a2efe8dc6b8f
+# Source0-md5:	0e7287d52f51fd4eedd561e288c1f7a7
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-POE >= 0.06_07
+BuildRequires:	perl-POE-Filter-IRCD
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -42,14 +43,11 @@ zrobiæ. Fajnie, nie?
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-mkdir -p lib/POE/{Component,Filter}
-mv Filter-CTCP.pm	lib/POE/Filter/CTCP.pm
-mv Filter-IRC.pm	lib/POE/Filter/IRC.pm
-mv IRC.pm		lib/POE/Component/IRC.pm
 
 %build
-%{__perl} -MExtUtils::MakeMaker -e 'WriteMakefile(NAME=>"POE::Component::IRC")' \
+%{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
 
 %{?with_tests:%{__make} test}
@@ -68,7 +66,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
-%{perl_vendorlib}/%{pdir}/*/*.pm
+%doc Changes README docs/*
+%{perl_vendorlib}/POE/Component/IRC.pm
+%dir %{perl_vendorlib}/POE/Component/IRC
+%{perl_vendorlib}/POE/Component/IRC/*.pm
+%dir %{perl_vendorlib}/POE/Component/IRC/Plugin
+%{perl_vendorlib}/POE/Component/IRC/Plugin/*.pm
+%dir %{perl_vendorlib}/POE/Component/IRC/Qnet
+%{perl_vendorlib}/POE/Component/IRC/Qnet/*.pm
+%dir %{perl_vendorlib}/POE/Component/IRC/Test
+%{perl_vendorlib}/POE/Component/IRC/Test/*.pm
+%{perl_vendorlib}/POE/Filter/IRC.pm
+%{perl_vendorlib}/POE/Filter/CTCP.pm
+%dir %{perl_vendorlib}/POE/Filter/IRC
+%{perl_vendorlib}/POE/Filter/IRC/Compat.pm
+
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/*
