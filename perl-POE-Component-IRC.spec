@@ -6,7 +6,7 @@
 %define		pdir	POE
 %define		pnam	Component-IRC
 Summary:	POE::Component::IRC - a fully event-driven IRC client module
-Summary(pl):	POE::Component::IRC - modu³ w pe³ni sterowanego zdarzeniami klienta IRC
+Summary(pl.UTF-8):   POE::Component::IRC - moduÅ‚ w peÅ‚ni sterowanego zdarzeniami klienta IRC
 Name:		perl-POE-Component-IRC
 Version:	5.11
 Release:	1
@@ -33,14 +33,14 @@ events your session cares about and where to connect to, and it sends
 back interesting IRC events when they happen. You make the client do
 things by sending it events. That's all there is to it. Cool, no?
 
-%description -l pl
-POE::Component::IRC to komponent POE (któ¿by zgad³?), który
-funkcjonuje jako ³atwo sterowalny klient IRC dla innych komponentów i
-sesji POE. Tworzy siê komponent IRC i mówi mu, którymi zdarzeniami
-zajmuje siê sesja oraz gdzie ma siê po³±czyæ, a on wysy³a z powrotem
-interesuj±ce zdarzenia IRC, kiedy wyst±pi±. Poprzez wysy³anie zdarzeñ
-powoduje siê, ¿e klient wykonuje ró¿ne rzeczy. To wszystko, co trzeba
-zrobiæ. Fajnie, nie?
+%description -l pl.UTF-8
+POE::Component::IRC to komponent POE (ktÃ³Å¼by zgadÅ‚?), ktÃ³ry
+funkcjonuje jako Å‚atwo sterowalny klient IRC dla innych komponentÃ³w i
+sesji POE. Tworzy siÄ™ komponent IRC i mÃ³wi mu, ktÃ³rymi zdarzeniami
+zajmuje siÄ™ sesja oraz gdzie ma siÄ™ poÅ‚Ä…czyÄ‡, a on wysyÅ‚a z powrotem
+interesujÄ…ce zdarzenia IRC, kiedy wystÄ…piÄ…. Poprzez wysyÅ‚anie zdarzeÅ„
+powoduje siÄ™, Å¼e klient wykonuje rÃ³Å¼ne rzeczy. To wszystko, co trzeba
+zrobiÄ‡. Fajnie, nie?
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
