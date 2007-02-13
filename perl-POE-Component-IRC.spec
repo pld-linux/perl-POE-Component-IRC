@@ -6,7 +6,7 @@
 %define		pdir	POE
 %define		pnam	Component-IRC
 Summary:	POE::Component::IRC - a fully event-driven IRC client module
-Summary(pl.UTF-8):   POE::Component::IRC - moduł w pełni sterowanego zdarzeniami klienta IRC
+Summary(pl.UTF-8):	POE::Component::IRC - moduł w pełni sterowanego zdarzeniami klienta IRC
 Name:		perl-POE-Component-IRC
 Version:	5.11
 Release:	1
