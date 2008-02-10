@@ -9,7 +9,7 @@ Summary:	POE::Component::IRC - a fully event-driven IRC client module
 Summary(pl.UTF-8):	POE::Component::IRC - moduł w pełni sterowanego zdarzeniami klienta IRC
 Name:		perl-POE-Component-IRC
 Version:	5.38
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
