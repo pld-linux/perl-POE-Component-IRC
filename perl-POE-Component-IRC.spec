@@ -8,20 +8,22 @@
 Summary:	POE::Component::IRC - a fully event-driven IRC client module
 Summary(pl.UTF-8):	POE::Component::IRC - moduł w pełni sterowanego zdarzeniami klienta IRC
 Name:		perl-POE-Component-IRC
-Version:	5.38
-Release:	2
+Version:	6.12
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/POE/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ceb0626f524b01c6c61cc21504dab356
+# Source0-md5:	db28b438ce523308ee12d0a21736502f
 URL:		http://search.cpan.org/dist/POE-Component-IRC/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-POE >= 0.06_07
+BuildRequires:	perl(POE::Component::Pluggable) >= 1.24
+BuildRequires:	perl-POE >= 0.3202
 BuildRequires:	perl-POE-Component-Client-DNS >= 1:0.99
-BuildRequires:	perl-POE-Filter-IRCD
+BuildRequires:	perl-POE-Filter-IRCD >= 1.7
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -76,10 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/POE/Component/IRC/Plugin/*.pm
 %dir %{perl_vendorlib}/POE/Component/IRC/Qnet
 %{perl_vendorlib}/POE/Component/IRC/Qnet/*.pm
-%dir %{perl_vendorlib}/POE/Component/IRC/Test
-%{perl_vendorlib}/POE/Component/IRC/Test/*.pm
 %{perl_vendorlib}/POE/Filter/IRC.pm
-%{perl_vendorlib}/POE/Filter/CTCP.pm
 %dir %{perl_vendorlib}/POE/Filter/IRC
 %{perl_vendorlib}/POE/Filter/IRC/Compat.pm
 
