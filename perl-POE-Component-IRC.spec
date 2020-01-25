@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	POE
 %define		pnam	Component-IRC
 Summary:	POE::Component::IRC - a fully event-driven IRC client module
